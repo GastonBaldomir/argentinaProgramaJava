@@ -19,6 +19,7 @@ public class strings {
 		//}
 		//System.out.print("la letra" +  letra +  "se repite" + contador  + "veces");
 		
+		
 		//ejercicio 1 b.
 		
 		//int []numeros = {3,5,1};
@@ -69,6 +70,7 @@ public class strings {
 		//System.out.print(numeros[1]);
 		//System.out.print(numeros[2]);
 		
+		
 		//ejercicio 1-c.
 		
 		int []numlist = {8,4,11,3,7,15,4,12,1};
@@ -81,6 +83,8 @@ public class strings {
 			}
 		};
 		System.out.print(resultado);
+		
+		
 		//ejercicio 2.
 		
 		//String nombres = "Gaston/Nahuel/Leonel/Franco/ldana/Yamila/Noelia/Ayelen/Nerea/Gisela";
@@ -90,6 +94,6 @@ public class strings {
 			//System.out.println(elemento);
 		//}
 	}
-
+	https://github.com/GastonBaldomir/argentinaProgramaJava/blob/master/practica/entregaStrings/src/entregaStrings/strings.java
 	
 }
