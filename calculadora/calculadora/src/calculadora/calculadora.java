@@ -2,88 +2,85 @@ package calculadora;
 
 import java.util.Scanner;
 
-public class calculadora {
+public class calculadora{
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		
-		int a=0;
-		while(a!=6) {
-			Scanner entrada= new Scanner(System.in);
-			System.out.println("----------Menu--------------");
-			System.out.println("Seleccione un numero para la operacion que desea realizar: ");
-			System.out.println("1. +");
-			System.out.println("2. -");
-			System.out.println("3. *");
-			System.out.println("4. /");
-			System.out.println("5. limpiar");
-			System.out.println("6. salir");
-			
-			System.out.println("Ingrese una de las opciones del menu: ");
-			String opcion= entrada.nextLine();
-			
-			switch(opcion) {
-			case "6": a=6;
-			System.out.println("Operacion finalizada");
-			break;
-			}
-			
-			if(a!=6) {
-			System.out.println("Ingrese un numero: ");
-			double num1=entrada.nextDouble();
-			System.out.println("Ingrese el segundo numero: ");
-			double num2=entrada.nextDouble();
-			
-			switch(opcion) {
-			case "1": System.out.println("El resultado de la suma es: " + sumar(num1, num2));
-			break;
+    public static void main(String[] args) {
+        int opcion = 0;
+        double num1 = 0;
+        double num2 = 0;
 
-			case "2": System.out.println("El resultado de la resta es: " + restar(num1, num2));
-			break;
+        Scanner entrada = new Scanner(System.in);
 
-			case "3": System.out.println("El resultado de la multiplicacion es: " + multiplicar(num1, num2));
-			break;
+        while (opcion != 6) {
+            System.out.println("----------Menu--------------");
+            System.out.println("Seleccione un numero para la operacion que desea realizar: ");
+            System.out.println("1. +");
+            System.out.println("2. -");
+            System.out.println("3. *");
+            System.out.println("4. /");
+            System.out.println("5. limpiar");
+            System.out.println("6. salir");
+            opcion = entrada.nextInt();
 
-			case "4": System.out.println("El resultado de la division es: " + dividir(num1, num2));
-			break;
+            if (opcion != 5 && opcion != 6 ) {
+                System.out.println("Ingrese un numero: ");
+                num1 = entrada.nextDouble();
+                System.out.println("Ingrese el segundo numero: ");
+                num2 = entrada.nextDouble();
+            }
 
-			case "5": num1=0;
-			    num2=0;
-			    opcion="";
-			break;
+            switch (opcion) {
+                case 1:
+                    System.out.println("La suma es: " + sumar(num1, num2));
+                    break;
 
-				}
-			
-			}
-			
-		}
-		}
-		
-		
-	static double sumar(double unNumero, double otroNumero) {
+                case 2:
+                    System.out.println("La resta es: " + restar(num1, num2));
+                    break;
 
-			return unNumero + otroNumero;
-		}
+                case 3:
+                    System.out.println("La multiplicacion es: " + multiplicar(num1, num2));
+                    break;
 
-	static double restar(double unNumero, double otroNumero) {
+                case 4:
+                    System.out.println("La division es: " + dividir(num1, num2));
+                    break;
 
-			return unNumero - otroNumero;
-		}
+                case 5:
+                    num1 = 0;
+                    num2 = 0;
+                    opcion = 0;
+                    break;
 
-	static double multiplicar(double unNumero, double otroNumero) {
+                case 6:
+                    opcion = 6;
+                    System.out.println("Operación finalizada");
+                    break;
+            }
+        }
 
-		return unNumero * otroNumero;
-		}
+    } //
 
-	static double dividir(double unNumero, double otroNumero) {
+    static double sumar(double unNumero, double otroNumero) {
 
-		return unNumero / otroNumero;
-		}
+        return unNumero + otroNumero;
+    }
 
-	
+    static double restar(double unNumero, double otroNumero) {
 
+        return unNumero - otroNumero;
+    }
+
+    static double multiplicar(double unNumero, double otroNumero) {
+
+        return unNumero * otroNumero;
+    }
+
+    static double dividir(double unNumero, double otroNumero) {
+
+        return unNumero / otroNumero;
+
+    }
 }
-	
 
 

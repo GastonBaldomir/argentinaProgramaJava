@@ -1,14 +1,42 @@
 package entregaStrings;
 
-public class entrega4{
+import java.util.Scanner;
+
+public class punto1cEntrega4 {
+
 	public static void main(String[] args) {
-		///punto 1-a.
-		int num1=12;
-		int num2=43;
-		int num3=22;
-		char letra= 'd';
+		// TODO Auto-generated method stub
+
+		int num1=' ';
+		int num2=2;
+		int num3=5;
+		char letra=' ';
+		Scanner datos= new Scanner(System.in);
+		
+		
+		if(num1==' ') {
+		System.out.println("Ingrese el primer numero que desea ordenar: ");
+		  num1=datos.nextInt();
+		}
+			
+		if(num2==' ') {
+		System.out.println("Ingrese el siguiente numero que desea ordenar: ");
+		 num2=datos.nextInt();
+		}
+		if(num3==' ') {
+		System.out.println("Ingrese el ultimo numero que desea ordenar: ");
+		 num3=datos.nextInt();
+		}
+		 if(letra==' ') {
+		System.out.println("Ingrese a o d, para ordenar ascendente o descenndete:  ");
+		 letra= datos.next().charAt(0);
+		 }
+		 
+		datos.close();
 		int vector[] = new int[3];
+		
 		vector = ordenar(num1,num2,num3, letra);
+		
 		
 		System.out.println(vector[0] +" " + vector[1]+" "  + vector[2]);
 	}
@@ -19,7 +47,7 @@ public class entrega4{
 		int menor;
 		int mayor;
 		int aux;
-		if(letra=='a') {
+		if(letra == 'a') {
 			if ((num1<num2) && (num1<num3)){
 			 menor= num1;
 			if (num2<num3){
@@ -53,9 +81,9 @@ public class entrega4{
 					aux=num1;}
 			}
 		
-		vector[0]=mayor;
+		vector[2]=mayor;
 		vector[1]=aux ; 
-		vector[2]=menor;
+		vector[0]=menor;
 		
 		}
 		else if(letra=='d') {
@@ -92,13 +120,13 @@ public class entrega4{
 					aux=num1;}
 			}
 		
-		vector[0]=menor;
+		vector[2]=menor;
 		vector[1]=aux ; 
-		vector[2]=mayor;
+		vector[0]=mayor;
 		
 		}
 		return vector;
 	
-} 
-}
+	}
 
+}
