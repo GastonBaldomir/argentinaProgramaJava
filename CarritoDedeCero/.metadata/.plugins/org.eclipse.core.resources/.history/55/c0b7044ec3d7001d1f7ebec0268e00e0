@@ -1,0 +1,17 @@
+package Carrito;
+
+public class Carrito {
+
+	private int numCarro;
+	private Cliente cliente;
+	;
+	
+	public Carrito (int numero,Cliente cliente) {
+		numCarro=numero;
+		this.cliente=cliente;
+	}
+	
+	public String infoCarro() {
+		return cliente;
+	}
+}

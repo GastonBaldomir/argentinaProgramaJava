@@ -1,0 +1,22 @@
+package Carrito;
+
+public class DescPorConTope extends Descuento {
+	
+	private double totalConDesc;
+
+	public double descTope(double totalCarro) {
+		double totalConDesc = totalCarro*0.70;
+		double descuento= totalCarro-totalConDesc;
+		if(descuento>3000) {
+			totalConDesc=totalCarro-3000;
+		}
+		this.totalConDesc=totalConDesc;
+		return totalConDesc;
+	}
+	
+	public double montoFinal(double montoInicial) {
+		return montoInicial - this.dameMontoDesc();
+	}
+	
+	
+}

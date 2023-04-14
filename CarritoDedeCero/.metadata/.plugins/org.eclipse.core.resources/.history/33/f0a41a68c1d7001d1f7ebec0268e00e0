@@ -1,0 +1,21 @@
+package Carrito;
+
+public class Producto {
+	
+	private String nombreProd;
+	private double precio;
+	private int idCod;
+
+	public Producto (String nombre,double precio,int id) {
+		nombre=nombreProd;
+		precio=this.precio;
+		id=idCod;
+	}
+	
+	public String dameNomProd() {
+		return nombreProd;
+	}
+	public double dimePrecioProd() {
+		return precio;
+	}
+}

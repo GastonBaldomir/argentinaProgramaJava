@@ -21,12 +21,15 @@ public class CompraPrincipal {
 		
 		
 		mostrarCompra(Item,carro1,persona);//metodo para comprar
-		
-		Descuento dFijo = new DescuentoFijo();//aplicar descuento fijo.
-		dFijo.asignaMonto(150);
-		System.out.println("Total con Descuento: "+" "+dFijo.montoFinal(carro1.dameMontoTotal()) );
-		
-		
+		if (carro1.dameMontoTotal()>1000) {
+			DescuentoPropor dProp = new DescuentoPropor();
+			dProp.asignaMontoProp(30);
+			System.out.println("Total con Descuento por Porcentaje: "+" "+dProp.montoFinal(carro1.dameMontoTotal()));
+		}else {
+			Descuento dFijo = new DescuentoFijo();//aplicar descuento fijo.
+			dFijo.asignaMonto(100);
+			System.out.println("Total con Descuento: "+" "+dFijo.montoFinal(carro1.dameMontoTotal()) );
+		}
 		
 	}
 	public static void mostrarCompra(ItemCarrito CargaItem[], Carrito carro1,Cliente persona) {

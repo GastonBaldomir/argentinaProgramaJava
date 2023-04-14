@@ -1,0 +1,25 @@
+package Carrito;
+
+public class DescPorConTope extends Descuento {
+	
+	private double totalConDesc;
+	private double descuento;
+	
+	public void descTope(double totalCarro) {
+		double totalConDesc = totalCarro * 0.7;
+		double descuento= totalCarro-totalConDesc;
+		
+		System.out.println(descuento);
+		if(descuento>=500) {
+			descuento=500;
+			System.out.println(descuento);
+		}
+
+	}
+	
+	public double montoFinal(double montoInicial) {
+		return montoInicial - this.descuento;
+	}
+	
+	
+}
