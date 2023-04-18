@@ -29,17 +29,35 @@ public class Compra {
 		compra.add(item1);
 		compra.add(item2);
 		
+		//ejecución del programa
+		
+		carro1.identificarCarro();
+		
 		Iterator<CargarCarrito>ItCarro = compra.iterator();
 		
 		while (ItCarro.hasNext()) {
 			CargarCarrito item = ItCarro.next();
 			item.mostrarCarro();
+			carro1.sumarTotal(item);
+		}
+		System.out.println("Total: "+" "+carro1.dameTotalCarro());
+		if (carro1.dameTotalCarro()<500) {
+			DescuentoFijo dFijo = new DescuentoFijo();
+			dFijo.asignaMonto(50);
+			System.out.println("Total con Descuento fijo: "+" "+dFijo.montoFinal(carro1.dameTotalCarro()));
+		}
+
+		else if ((carro1.dameTotalCarro()>501) && (carro1.dameTotalCarro())<1500) {
+			DescuentoProp dProp = new DescuentoProp();
+			dProp.asignaMontoProp(30);
+			System.out.println("Total con Descuento por Porcentaje: "+" "+dProp.montoFinal(carro1.dameTotalCarro()));
+		}else {
+			DescPorConTope dTope = new DescPorConTope();
+			dTope.descTope(carro1.dameTotalCarro());
+			System.out.println("Total con Descuento por Porcentajetope: "+" "+dTope.montoFinal(carro1.dameTotalCarro()));
 		}
 		
-
 	}
-	public void mostrarCompra(Carrito carro1, Cliente cliente1, CargarCarrito compra1) {
-		
-	}
+	
 	
 }

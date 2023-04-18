@@ -23,7 +23,7 @@ public class Compra {
 		compra=new ArrayList<CargarCarrito>();
 		
 		CargarCarrito item1 = new CargarCarrito( carro1, 0 , atun);
-		CargarCarrito item2 = new CargarCarrito( carro1, 10 , yerba);
+		CargarCarrito item2 = new CargarCarrito( carro1,5 , yerba);
 		CargarCarrito item3 = new CargarCarrito( carro1, 0 , arroz);
 		compra.add(item3);
 		compra.add(item1);
@@ -45,23 +45,16 @@ public class Compra {
 		
 			if ((carro1.dameTotalCarro()<500) && (carro1.dameTotalCarro())>0) {
 				DescuentoFijo dFijo = new DescuentoFijo();
-				dFijo.asignaMonto(300);
-				if(dFijo.montoFinal(carro1.dameTotalCarro())>0) {
-					System.out.println("Total con Descuento fijo: "+" "+dFijo.montoFinal(carro1.dameTotalCarro()));
-				}else System.out.println("El monto es negativo hay un error");
-				
-			}else if ((carro1.dameTotalCarro()>501) && (carro1.dameTotalCarro())<1500) {
+				dFijo.asignaMonto(50);
+				System.out.println("Total con Descuento fijo: "+" "+dFijo.montoFinal(carro1.dameTotalCarro()));
+			}	else if ((carro1.dameTotalCarro()>501) && (carro1.dameTotalCarro())<1500) {
 				DescuentoProp dProp = new DescuentoProp();
 				dProp.asignaMontoProp(30);
-				if(dProp.montoFinal(carro1.dameTotalCarro())>0) {
-					System.out.println("Total con Descuento por Porcentaje: "+" "+dProp.montoFinal(carro1.dameTotalCarro()));
-				}else System.out.println("El monto es negativo hay un error");
+				System.out.println("Total con Descuento por Porcentaje: "+" "+dProp.montoFinal(carro1.dameTotalCarro()));
 			}else {
 				DescPorConTope dTope = new DescPorConTope();
 				dTope.descTope(carro1.dameTotalCarro());
-				if(dTope.montoFinal(carro1.dameTotalCarro())>0) {
-					System.out.println("Total con Descuento por Porcentajetope: "+" "+dTope.montoFinal(carro1.dameTotalCarro()));
-				}else System.out.println("El monto es negativo hay un error");
+				System.out.println("Total con Descuento por Porcentajetope: "+" "+dTope.montoFinal(carro1.dameTotalCarro()));
 			}
 		}else System.out.println("Error, no se puede aplicar ningun descuento");
 
