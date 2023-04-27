@@ -1,9 +1,13 @@
 package ProyecoFinal;
 
-public class SimularPartido {
 
+public class SimularPartido{
+
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
+		
 		Persona Juan =new Persona("Juan",1);
 		Persona Juanita =new Persona("Juanita",2);
 		
